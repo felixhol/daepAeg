@@ -1,3 +1,3 @@
 # daepAeg
 
-Code to count mosquito eggs. 
+Code to count mosquito eggs using pictures from egg paper. 
