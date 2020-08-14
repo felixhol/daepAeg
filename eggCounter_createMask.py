@@ -39,15 +39,15 @@ for f in frames:
         Fer = erosion(F,disk(1))
         erMask = erMask + Fer
     maskS = PIL.Image.fromarray((mask * 255).astype(np.uint8))
-    maskS.save(saveDir + 'eggs' + os.path.basename(imgs[imgN]))
+    maskS.save(saveDir + 'eggs' + os.path.basename(frames._filepaths[imgN]))
     edges = mask - erMask
     edges2 = edges
     edges2[edges2>0] = 2
     edgesS = PIL.Image.fromarray((edges * 255).astype(np.uint8))
-    edgesS.save(saveDir + 'edges' + os.path.basename(imgs[imgN]))
+    edgesS.save(saveDir + 'edges' + os.path.basename(frames._filepaths[imgN]))
     fullMask = edges2 + erMask
     fullMaskS = PIL.Image.fromarray((fullMask * 125).astype(np.uint8))
-    fullMaskS.save(saveDir + 'eggsEdges' + os.path.basename(imgs[imgN]))
+    fullMaskS.save(saveDir + 'eggsEdges' + os.path.basename(frames._filepaths[imgN]))
     imgN += 1
 
 
